@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html manifest="offline.appcache">
+<head>
+    <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>MahdiSml</title>
+	<link rel="manifest" href="appmanifest.json" />
+	<meta name="description" content="MahdiSml Official Site">
+	<meta name="author" content="Mahdi Safarmohammadloo (MahdiSml)">
+	<meta name="keywords" content="MahdiSml,Mahdi,Safarmohammadloo,Mahdi Safarmohammadloo,Game,GameDeveloper,Pro,Design,Best Design,Developer,Site Design">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" sizes="214x214" href="icon-256.png" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<link rel="icon" type="image/png" href="icon-256.png" />
+	<link rel="shortcut icon" sizes="214x214" href="iconn.ico" />
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		html, body {
+			background: #000;
+			color: #fff;
+			overflow: hidden;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+		canvas {
+			touch-action-delay: none;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-102574342-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head> 
+<body> 
+	<div id="fb-root"></div>
+	
+	<script>
+	(function(){
+		if (window.location.protocol.substr(0, 4) === "file")
+		{
+			alert("Error ! Dont run Offline my site :( ");
+			// وَإِن یَکَادُ الَّذِینَ کَفَرُوا لَیُزْلِقُونَکَ بِأَبْصَارِهِمْ لَمَّا سَمِعُوا الذِّکْرَ وَیَقُولُونَ إِنَّهُ لَمَجْنُونٌ ﴿۵۱﴾ وَمَا هُوَ إِلَّا ذِکْرٌ لِّلْعَالَمِینَ ﴿۵۲﴾
+		}
+	})();
+	</script>
+	<div id="c2canvasdiv">
+	
+		<canvas id="c2canvas" width="1717" height="1212">
+			<h1>Your Browser are OLD !!! Please Upgrade :) </h1>
+			<h1><a href="http://www.whatbrowser.org">What is a browser?</a><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
+			  <a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
+			  <a href="http://www.google.com/chrome/">Google Chrome</a><br/>
+			  <a href="https://www.instagram.com/mahdisml98/">Apple Safari</a>
+			<a href="https://www.linkedin.com/in/mahdisml/"></a>
+		<a href="https://www.mahdisml.com"></a>
+	<a href="https://twitter.com/Mahdisml"></a>
+<a href="http://www.multiplatform.ir"></a>
+<a href="https://github.com/mahdisml"></a></h1>
+		</canvas>
+		
+	</div>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script src="pathfind.js"></script>
+	<script src="c2runtime.js"></script>
+
+    <script>
+		//MahdiSml ! :) 
+		jQuery(document).ready(function ()
+		{			
+			cr_createRuntime("c2canvas");
+		});
+		function onVisibilityChanged() {
+			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+				cr_setSuspended(true);
+			else
+				cr_setSuspended(false);
+		};
+		document.addEventListener("visibilitychange", onVisibilityChanged, false);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+		function OnRegisterSWError(e)
+		{
+			console.warn("Failed to register service worker: ", e);
+		};
+		window.C2_RegisterSW = function C2_RegisterSW()
+		{
+			if (!navigator.serviceWorker)
+				return;
+			
+			try {
+				navigator.serviceWorker.register("sw.js", { scope: "./" })
+				.then(function (reg)
+				{
+					console.log("Registered service worker on " + reg.scope);
+				})
+				.catch(OnRegisterSWError);
+			}
+			catch (e){
+				OnRegisterSWError(e);
+			}
+		};
+</script>
+</body> 
+</html> 
